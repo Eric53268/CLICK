@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:title="@string/tasksNav"/>
+
+        <item android:title="@string/eventsNav" />-->
+
+    <item
+        android:id="@+id/staffDetailsNav"
+        android:title="@string/staffDetails"><!--
+        <action
+            android:id="@+id/action_nav_tab_to_account"
+            app:destination="@id/activity_account_manager"/>-->
+    </item>
+
+    <item
+        android:id="@+id/reservationsNav"
+        android:title="@string/reservationDetails"><!--
+        <action
+            android:id="@+id/action_nav_tab_to_reservations"
+            app:destination="@id/activity_reservations"/>-->
+    </item>
+
+</menu>

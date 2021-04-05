@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_nav"
+    app:startDestination="@id/list_users_manager">
+
+    <fragment
+        android:id="@+id/list_users_manager"
+        android:name="com.example.clickhotelmanagementsystem.AccountsModule.ListUsersManagerFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_list_users_manager" >
+        <action
+            android:id="@+id/action_list_users_manager_to_add_user_account_manager"
+            app:destination="@id/add_user_account_manager" />
+        <action
+            android:id="@+id/action_list_users_manager_to_viewUserAccountManager"
+            app:destination="@id/viewUserAccountManager" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_user_account_manager"
+        android:name="com.example.clickhotelmanagementsystem.AccountsModule.AddUserAccountManagerFragment"
+        android:label="Add new user"
+        tools:layout="@layout/fragment_add_user_account_manager" >
+        <action
+            android:id="@+id/action_add_user_account_manager_to_list_users_manager"
+            app:destination="@id/list_users_manager" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewUserAccountManager"
+        android:name="com.example.clickhotelmanagementsystem.AccountsModule.ViewUserAccountManager"
+        android:label="View user"
+        tools:layout="@layout/fragment_view_user_account_manager" >
+        <action
+            android:id="@+id/action_viewUserAccountManager_to_updateUserAccountManager"
+            app:destination="@id/updateUserAccountManager" />
+        <action
+            android:id="@+id/action_viewUserAccountManager_to_list_users_manager"
+            app:destination="@id/list_users_manager" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.clickhotelmanagementsystem.Database.EditOwnProfile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateUserAccountManager"
+        android:name="com.example.clickhotelmanagementsystem.AccountsModule.UpdateUserAccountManager"
+        android:label="Update user"
+        tools:layout="@layout/fragment_update_user_account_manager" >
+        <argument
+            android:name="updateUser"
+            app:argType="com.example.clickhotelmanagementsystem.Database.EditOwnProfile" />
+        <action
+            android:id="@+id/action_updateUserAccountManager_to_list_users_manager"
+            app:destination="@id/list_users_manager" />
+    </fragment>
+</navigation>

@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">CLiCK Hotel Management System</string>
+    <string name="loginIDInput">Login ID</string>
+    <string name="passwordInput">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="loggedManager">Logged in as a manager!</string>
+    <string name="loggedStaff">Logged in as staff!</string>
+    <string name="tasks">Tasks</string>
+    <string name="events">Events</string>
+    <string name="reservations">Reservations</string>
+    <string name="staffDetails">Staff Details</string>
+    <string name="profile">Name</string>
+    //Profile name on main page
+    <string name="loginPage">Login page</string>
+    <string name="hotelManagementSystem">Hotel Management System</string>
+    <string name="logo">CLiCK</string>
+    <string name="forgotPassword"><u>Forgot password?</u></string>
+    <string name="open">Open</string>
+    //For text-to-speech for when opening navigation bar
+    <string name="close">Close</string>
+    //For text-to-speech for when closing navigation bar
+    <string name="add">Add</string>
+
+    //String resources for accounts module
+    <string name="fieldID">ID</string>
+    <string name="fieldFirstName">First name</string>
+    <string name="fieldLastName">Last name</string>
+    <string name="fieldDOB">Date of birth</string>
+    <string name="fieldIC">IC</string>
+    <string name="fieldEmail">Email address</string>
+    <string name="fieldPhoneNumber">Phone number</string>
+    <string name="fieldDepartment">Department</string>
+    <string name="fieldPosition">Position</string>
+    <string name="fieldAddress">Address</string>
+    <string name="resetPassword">Reset password</string>
+
+    //String resources for reservations module
+    <string name="fieldReservationName">Reservation Name</string>
+    <string name="fieldPax">Pax</string>
+    <string name="fieldDurationOfStay">Duration of Stay</string>
+    <string name="standardRoomTitle">Standard room(S)</string>
+    <string name="deluxeRoomTitle">Deluxe room(D)</string>
+    <string name="premiumRoomTitle">Premium room(P)</string>
+    <string name="lexisSuiteTitle">Lexis suite(L)</string>
+    <string name="roomsAvailableNumber">Number</string>
+    <string name="breakfast">Breakfast</string>
+
+    //Buttons
+    <string name="deleteReservation">Delete reservation</string>
+    <string name="saveUserButton">Save</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="editButton">edit</string>
+    <string name="saveReservationsButton">Save</string>
+    <string name="reservationDetails">Details</string>
+    <string name="roomsAvailable">Rooms available</string>
+    <string name="saveUserEditButton">Save</string>
+
+    <string-array name="departments">
+        <item>Admin</item>
+        <item>Cleanliness</item>
+        <item>Customer service</item>
+    </string-array>
+
+    <string-array name="positions">
+        <item>Manager</item>
+        <item>Front desk clerk</item>
+        <item>Janitor</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

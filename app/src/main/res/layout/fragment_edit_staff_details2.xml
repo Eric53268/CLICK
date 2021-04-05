@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountsModule.EditStaffDetails2">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <TextView
+        android:id="@+id/fieldName"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Name"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldDOB"
+        app:layout_constraintEnd_toStartOf="@id/inputName"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fieldDOB"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Date of birth"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldAddress"
+        app:layout_constraintEnd_toStartOf="@id/inputDOB"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldName" />
+
+
+    <TextView
+        android:id="@+id/fieldAddress"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Address"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldEmail"
+        app:layout_constraintEnd_toStartOf="@id/inputAddress"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldDOB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fieldEmail"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Email"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldPhoneNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/inputEmail"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldAddress" />
+
+
+    <TextView
+        android:id="@+id/fieldPhoneNumber"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Phone number"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldPosition"
+        app:layout_constraintEnd_toStartOf="@id/inputPhoneNumber"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldEmail" />
+
+    <TextView
+        android:id="@+id/fieldPosition"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Position"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fieldDepartment"
+        app:layout_constraintEnd_toStartOf="@id/inputPosition"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldPhoneNumber" />
+
+    <TextView
+        android:id="@+id/fieldDepartment"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="130dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="Department"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/inputDepartment"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fieldPosition" />
+
+    <TextView
+        android:id="@+id/inputName"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Name"
+        app:layout_constraintBottom_toTopOf="@id/inputDOB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inputDOB"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Date of birth"
+        app:layout_constraintBottom_toTopOf="@id/inputAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldDOB"
+        app:layout_constraintTop_toBottomOf="@id/inputName" />
+
+
+    <TextView
+        android:id="@+id/inputAddress"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Address"
+        app:layout_constraintBottom_toTopOf="@id/inputEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldAddress"
+        app:layout_constraintTop_toBottomOf="@id/inputDOB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/inputEmail"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Email"
+        app:layout_constraintBottom_toTopOf="@id/inputPhoneNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldEmail"
+        app:layout_constraintTop_toBottomOf="@id/inputAddress" />
+
+
+    <TextView
+        android:id="@+id/inputPhoneNumber"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Phone number"
+        app:layout_constraintBottom_toTopOf="@id/inputPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@id/inputEmail" />
+
+    <TextView
+        android:id="@+id/inputPosition"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Position"
+        app:layout_constraintBottom_toTopOf="@id/inputDepartment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldPosition"
+        app:layout_constraintTop_toBottomOf="@id/inputPhoneNumber" />
+
+    <TextView
+        android:id="@+id/inputDepartment"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="130dp"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:hint="Department"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/fieldDepartment"
+        app:layout_constraintTop_toBottomOf="@id/inputPosition" />
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/regeneratePasswordButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightGray"
+        android:text="@string/resetPassword"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/editButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

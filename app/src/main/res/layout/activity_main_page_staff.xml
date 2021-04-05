@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Staff.MainPageStaff">
+
+    <TextView
+        android:id="@+id/tasksBtnBackground"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:background="@drawable/box"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/eventsBtnBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/reservationsBtnBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.873" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loggedStaff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/gym"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/tasks"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/tasks"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/tasksBtnBackground"
+        app:layout_constraintEnd_toEndOf="@+id/tasksBtnBackground"
+        app:layout_constraintStart_toEndOf="@+id/events"
+        app:layout_constraintStart_toStartOf="@id/tasksBtnBackground"
+        app:layout_constraintTop_toTopOf="@id/tasksBtnBackground"
+        app:layout_constraintVertical_bias="0.90999997" />
+
+    <Button
+        android:id="@+id/events"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/events"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/eventsBtnBackground"
+        app:layout_constraintEnd_toEndOf="@+id/eventsBtnBackground"
+        app:layout_constraintStart_toEndOf="@+id/tasks"
+        app:layout_constraintStart_toStartOf="@id/eventsBtnBackground"
+        app:layout_constraintTop_toTopOf="@id/eventsBtnBackground"
+        app:layout_constraintVertical_bias="0.90999997" />
+
+    <Button
+        android:id="@+id/reservations"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/reservations"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/reservationsBtnBackground"
+        app:layout_constraintEnd_toEndOf="@+id/reservationsBtnBackground"
+        app:layout_constraintStart_toEndOf="@+id/staffDetails"
+        app:layout_constraintStart_toStartOf="@id/reservationsBtnBackground"
+        app:layout_constraintTop_toTopOf="@id/reservationsBtnBackground"
+        app:layout_constraintVertical_bias="0.893" />
+
+    <ImageView
+        android:id="@+id/reservationsIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/reservations"
+        app:layout_constraintEnd_toEndOf="@+id/reservationsBtnBackground"
+        app:layout_constraintStart_toStartOf="@+id/reservationsBtnBackground"
+        app:layout_constraintTop_toTopOf="@+id/reservationsBtnBackground"
+        app:layout_constraintVertical_bias="0.1"
+        app:srcCompat="@drawable/reservations1" />
+
+    <ImageView
+        android:id="@+id/tasksIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/tasks"
+        app:layout_constraintEnd_toEndOf="@+id/tasksBtnBackground"
+        app:layout_constraintStart_toStartOf="@+id/tasksBtnBackground"
+        app:layout_constraintTop_toTopOf="@+id/tasksBtnBackground"
+        app:srcCompat="@drawable/task1" />
+
+    <ImageView
+        android:id="@+id/eventsIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/events"
+        app:layout_constraintEnd_toEndOf="@+id/eventsBtnBackground"
+        app:layout_constraintStart_toStartOf="@+id/eventsBtnBackground"
+        app:layout_constraintTop_toTopOf="@+id/eventsBtnBackground"
+        app:srcCompat="@drawable/event" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
