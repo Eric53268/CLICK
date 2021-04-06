@@ -14,12 +14,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clickhotelmanagementsystem.DBHandler
 import com.example.clickhotelmanagementsystem.DTO.Event
-import com.example.clickhotelmanagementsystem.ItemActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-
 
 class DashboardActivity : AppCompatActivity() {
 

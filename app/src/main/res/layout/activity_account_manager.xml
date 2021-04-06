@@ -29,7 +29,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
 
-    /<!--    <androidx.fragment.app.FragmentContainerView
+        /<!--<androidx.fragment.app.FragmentContainerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragment_add_list_user"
         android:name="com.example.AddUserAccountManagerFragment"

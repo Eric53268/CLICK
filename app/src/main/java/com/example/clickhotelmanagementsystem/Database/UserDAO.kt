@@ -13,6 +13,13 @@ interface UserDAO {
     @Update
     suspend fun updateUser(user: EditOwnProfile)
 
+    @Delete
+    suspend fun deleteUser(user: EditOwnProfile)
+
+    //Delete all
+    @Query("DELETE FROM Accounts")
+    suspend fun deleteAllUsers()
+
     @Query("SELECT * FROM Accounts ORDER BY uID ASC")
     fun readAllData(): LiveData<List<EditOwnProfile>>
 

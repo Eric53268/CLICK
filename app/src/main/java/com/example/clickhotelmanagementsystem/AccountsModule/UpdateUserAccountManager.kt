@@ -1,10 +1,9 @@
 package com.example.clickhotelmanagementsystem.AccountsModule
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -64,6 +63,7 @@ class UpdateUserAccountManager : Fragment() {
             Toast.makeText(requireContext(), "Check2", Toast.LENGTH_LONG).show()
 
         }
+        setHasOptionsMenu(true)
 
         return view
 
@@ -120,6 +120,30 @@ class UpdateUserAccountManager : Fragment() {
                 TextUtils.isEmpty(departmentValue) &&
                 TextUtils.isEmpty(positionValue) &&
                 TextUtils.isEmpty(phoneNumber))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_user_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.delete_user){
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_, _->
+            mUserViewModel.deleteUser(args.updateUser)
+            Toast.makeText(requireContext(), "Successfully removed: ${args.updateUser.firstName}",
+                Toast.LENGTH_LONG).show()
+        }
+        builder.setNegativeButton("No"){_, _ ->}
+        builder.setTitle("Delete ${args.updateUser.firstName}?")
+        builder.setMessage("Are you sure you want to delete ${args.updateUser.firstName}?")
+        builder.create().show()
     }
 
 }
