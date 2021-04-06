@@ -16,8 +16,8 @@ import kotlinx.android.synthetic.main.activity_account_manager.*
 class AccountManager : AppCompatActivity() {
 
     private lateinit var binding: ActivityAccountManagerBinding
-    private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
