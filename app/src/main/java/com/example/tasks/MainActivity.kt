@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.clickhotelmanagementsystem.R
 
 class MainActivity : AppCompatActivity() {
 

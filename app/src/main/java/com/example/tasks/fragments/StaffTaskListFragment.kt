@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tasks.R
+import com.example.clickhotelmanagementsystem.R
 import com.example.tasks.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.fragment_staff_task_list.view.*
 

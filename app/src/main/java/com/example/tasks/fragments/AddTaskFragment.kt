@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.tasks.R
+import com.example.clickhotelmanagementsystem.R
 import com.example.tasks.model.Task
 import com.example.tasks.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.fragment_add_task.*

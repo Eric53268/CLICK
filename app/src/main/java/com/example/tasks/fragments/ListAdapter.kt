@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tasks.R
+import com.example.clickhotelmanagementsystem.R
 import com.example.tasks.model.Task
-import kotlinx.android.synthetic.main.custom_row.view.*
+import kotlinx.android.synthetic.main.manager_custom_row.view.*
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
@@ -18,7 +18,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.custom_row, parent, false))
+        return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.manager_custom_row, parent, false))
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -28,7 +28,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.name_txt.text = currentItem.staffName
         holder.itemView.date_txt.text = currentItem.date
 
-        holder.itemView.rowLayout.setOnClickListener {
+        holder.itemView.managerRowLayout.setOnClickListener {
             val action = TaskListFragmentDirections.actionTaskListFragmentToUpdateTaskFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
         }

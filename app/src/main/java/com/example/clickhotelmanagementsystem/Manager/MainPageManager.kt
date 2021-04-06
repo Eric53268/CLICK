@@ -2,12 +2,11 @@ package com.example.clickhotelmanagementsystem.Manager
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.CalendarContract
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clickhotelmanagementsystem.DashboardActivity
 import com.example.clickhotelmanagementsystem.R
-import kotlinx.android.synthetic.main.activity_main_page_manager.*
+import com.example.tasks.MainActivity
 
 class MainPageManager : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +33,11 @@ class MainPageManager : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val task: Button = findViewById(R.id.tasks)
+        task.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

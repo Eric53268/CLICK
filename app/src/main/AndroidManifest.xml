@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.example.tasks.MainActivity" />
+        <activity android:name="com.example.tasks.StaffActivity" />
         <activity android:name=".Manager.MainPageManager" />
         <activity android:name=".Manager.Reservations" />
         <activity android:name=".Manager.AccountManager" />
