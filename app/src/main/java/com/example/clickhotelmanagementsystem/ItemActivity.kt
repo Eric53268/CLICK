@@ -19,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ItemActivity : AppCompatActivity() {
     lateinit var dbHandler: DBHandler
-    var eventId : Long = -1
+    private var eventId : Long = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,7 +90,7 @@ class ItemActivity : AppCompatActivity() {
         rv.adapter = ItemAdapter(this,dbHandler.getEventItem(eventId))
     }
 
-    class ItemAdapter(val activity: ItemActivity, val list: MutableList<EventItem>) :
+    class ItemAdapter(private val activity: ItemActivity, val list: MutableList<EventItem>) :
             RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
             return ViewHolder(LayoutInflater.from(activity).inflate(R.layout.rv_child_item, p0, false))

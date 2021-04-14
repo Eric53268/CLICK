@@ -38,10 +38,6 @@ class ViewAllReservations : Fragment() {
         binding.lexisSuiteDetail.setOnClickListener {
             findNavController().navigate(R.id.action_view_all_reservations_to_view_lexis_suite)
         }
-
-/*        view.addButton.setOnClickListener{
-            findNavController().navigate(R.id.action_listFragment_to_addFragment)
-        }*/
     }
 
 }

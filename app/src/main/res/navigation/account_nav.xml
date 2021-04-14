@@ -41,7 +41,7 @@
             app:destination="@id/list_users_manager" />
         <argument
             android:name="currentUser"
-            app:argType="com.example.clickhotelmanagementsystem.Database.EditOwnProfile" />
+            app:argType="com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile" />
     </fragment>
 
     <fragment
@@ -51,7 +51,7 @@
         tools:layout="@layout/fragment_update_user_account_manager" >
         <argument
             android:name="updateUser"
-            app:argType="com.example.clickhotelmanagementsystem.Database.EditOwnProfile" />
+            app:argType="com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile" />
         <action
             android:id="@+id/action_updateUserAccountManager_to_list_users_manager"
             app:destination="@id/list_users_manager" />

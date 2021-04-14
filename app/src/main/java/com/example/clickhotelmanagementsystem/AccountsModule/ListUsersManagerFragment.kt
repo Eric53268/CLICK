@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clickhotelmanagementsystem.Database.UserViewModel
+import com.example.clickhotelmanagementsystem.Database.Accounts.UserViewModel
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentListUsersManagerBinding
 import kotlinx.android.synthetic.main.fragment_list_users_manager.view.*
@@ -27,7 +27,7 @@ class ListUsersManagerFragment : Fragment()  {
         binding = FragmentListUsersManagerBinding.bind(view)
 
             //Recyclerview
-            val adapter = ListAdapter()
+            val adapter = ListAdapterAccounts()
             val recyclerView = view.view_user
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(requireContext())

@@ -2,12 +2,10 @@ package com.example.clickhotelmanagementsystem.Manager
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.CalendarContract
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clickhotelmanagementsystem.DashboardActivity
 import com.example.clickhotelmanagementsystem.R
-import kotlinx.android.synthetic.main.activity_main_page_manager.*
 
 class MainPageManager : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

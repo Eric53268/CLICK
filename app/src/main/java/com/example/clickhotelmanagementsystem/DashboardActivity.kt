@@ -80,7 +80,7 @@ class DashboardActivity : AppCompatActivity() {
         rv.adapter = DashboardAdapter(this, dbHandler.getEvents())
     }
 
-    class DashboardAdapter(val activity: DashboardActivity, val list: MutableList<Event>) :
+    class DashboardAdapter(private val activity: DashboardActivity, val list: MutableList<Event>) :
         RecyclerView.Adapter<DashboardAdapter.ViewHolder>(){
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
             return ViewHolder(LayoutInflater.from(activity).inflate(R.layout.rv_child_dashboard, p0,false))

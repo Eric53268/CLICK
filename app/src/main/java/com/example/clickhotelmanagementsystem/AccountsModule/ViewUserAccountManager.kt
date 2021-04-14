@@ -14,11 +14,7 @@ import kotlinx.android.synthetic.main.fragment_view_user_account_manager.view.*
 class ViewUserAccountManager : Fragment() {
 
     private val argsUser by navArgs<ViewUserAccountManagerArgs>()
-    //private lateinit var mUserViewModel: UserViewModel
     private lateinit var binding: FragmentViewUserAccountManagerBinding
-    /*private lateinit var departmentValue: String
-    private lateinit var positionValue: String
-    private lateinit var departmentSpinner: Spinner*/
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

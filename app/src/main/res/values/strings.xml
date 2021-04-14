@@ -38,12 +38,15 @@
     <string name="fieldReservationName">Reservation Name</string>
     <string name="fieldPax">Pax</string>
     <string name="fieldDurationOfStay">Duration of Stay</string>
+    <string name="fieldRoomID">Room ID</string>
     <string name="standardRoomTitle">Standard room(S)</string>
     <string name="deluxeRoomTitle">Deluxe room(D)</string>
     <string name="premiumRoomTitle">Premium room(P)</string>
     <string name="lexisSuiteTitle">Lexis suite(L)</string>
     <string name="roomsAvailableNumber">Number</string>
     <string name="breakfast">Breakfast</string>
+    <string name="checkInDate">Check in date</string>
+    <string name="checkOutDate">Check out date</string>
 
     //Buttons
     <string name="deleteReservation">Delete reservation</string>
