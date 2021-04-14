@@ -48,6 +48,23 @@
     <string name="checkInDate">Check in date</string>
     <string name="checkOutDate">Check out date</string>
 
+    //String resources for task module
+    <string name="add_task">Add</string>
+    <string name="delete_task">Delete</string>
+    <string name="task">Task</string>
+    <string name="staff_name">Staff Name</string>
+    <string name="task_date">Date</string>
+    <string name="event">Event</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="date_format">dd/mm/yyyy</string>
+    <string name="search_task">Search task</string>
+    <string name="update_task">Update</string>
+    <string name="search">Search</string>
+    <string name="staff">Staff</string>
+    <string name="assigned_date">Date</string>
+
     //Buttons
     <string name="deleteReservation">Delete reservation</string>
     <string name="saveUserButton">Save</string>
