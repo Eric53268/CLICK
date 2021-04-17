@@ -12,8 +12,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.clickhotelmanagementsystem.Database.EditOwnProfile
-import com.example.clickhotelmanagementsystem.Database.UserViewModel
+import com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile
+import com.example.clickhotelmanagementsystem.Database.Accounts.UserViewModel
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentAddUserAccountManagerBinding
 import kotlinx.android.synthetic.main.fragment_add_user_account_manager.*

@@ -1,4 +1,4 @@
-package com.example.clickhotelmanagementsystem.Database
+package com.example.clickhotelmanagementsystem.Database.Accounts
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

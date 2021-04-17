@@ -1,4 +1,4 @@
-package com.example.clickhotelmanagementsystem.Database
+package com.example.clickhotelmanagementsystem.Database.Accounts
 
 import android.content.Context
 import androidx.room.Database
@@ -15,7 +15,7 @@ abstract class UserDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: UserDatabase? = null
 
-        fun getDatabase(context: Context):UserDatabase{
+        fun getDatabase(context: Context): UserDatabase {
             val tempInstance = INSTANCE
             if(tempInstance != null){
                 return tempInstance

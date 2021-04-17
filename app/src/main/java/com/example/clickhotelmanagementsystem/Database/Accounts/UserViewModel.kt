@@ -1,4 +1,4 @@
-package com.example.clickhotelmanagementsystem.Database
+package com.example.clickhotelmanagementsystem.Database.Accounts
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

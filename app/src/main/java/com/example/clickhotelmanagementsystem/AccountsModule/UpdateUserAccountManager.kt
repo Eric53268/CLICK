@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.clickhotelmanagementsystem.Database.EditOwnProfile
-import com.example.clickhotelmanagementsystem.Database.UserViewModel
+import com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile
+import com.example.clickhotelmanagementsystem.Database.Accounts.UserViewModel
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentUpdateUserAccountManagerBinding
 import kotlinx.android.synthetic.main.fragment_update_user_account_manager.*
@@ -60,7 +60,6 @@ class UpdateUserAccountManager : Fragment() {
 
         view.edit_button.setOnClickListener {
             updateItem()
-            Toast.makeText(requireContext(), "Check2", Toast.LENGTH_LONG).show()
 
         }
         setHasOptionsMenu(true)
@@ -139,6 +138,7 @@ class UpdateUserAccountManager : Fragment() {
             mUserViewModel.deleteUser(args.updateUser)
             Toast.makeText(requireContext(), "Successfully removed: ${args.updateUser.firstName}",
                 Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_updateUserAccountManager_to_list_users_manager)
         }
         builder.setNegativeButton("No"){_, _ ->}
         builder.setTitle("Delete ${args.updateUser.firstName}?")

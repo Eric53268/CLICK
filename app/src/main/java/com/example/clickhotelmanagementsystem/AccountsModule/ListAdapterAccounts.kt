@@ -5,12 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clickhotelmanagementsystem.Database.EditOwnProfile
+import com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile
 import com.example.clickhotelmanagementsystem.R
-import kotlinx.android.synthetic.main.custom_row.view.*
+import kotlinx.android.synthetic.main.custom_row_accounts.view.*
 
-
-class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class ListAdapterAccounts: RecyclerView.Adapter<ListAdapterAccounts.MyViewHolder>() {
 
     private var userList = emptyList<EditOwnProfile>()
 
@@ -19,7 +18,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.custom_row,
+                R.layout.custom_row_accounts,
                 parent,
                 false
             )
@@ -33,7 +32,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.displayPosition.text = currentItem.department.toString()
         holder.itemView.displayDepartment.text = currentItem.position.toString()
 
-        holder.itemView.rowLayout.setOnClickListener {
+        holder.itemView.rowLayoutAccounts.setOnClickListener {
             val action = ListUsersManagerFragmentDirections.actionListUsersManagerToViewUserAccountManager(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
