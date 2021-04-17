@@ -1,5 +1,6 @@
 package com.example.tasks.fragments
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,9 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.id_txt.text = currentItem.id.toString()
         holder.itemView.task_txt.text = currentItem.taskDescription
         holder.itemView.name_txt.text = currentItem.staffName
-        holder.itemView.date_txt.text = currentItem.date
+        holder.itemView.event_txt.text = currentItem.event
+        if (holder.itemView.event_txt.text != "-")
+            holder.itemView.setBackgroundColor(Color.rgb(137,207,240))
 
         holder.itemView.managerRowLayout.setOnClickListener {
             val action = TaskListFragmentDirections.actionTaskListFragmentToUpdateTaskFragment(currentItem)

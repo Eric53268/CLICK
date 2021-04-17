@@ -24,4 +24,8 @@ class TaskRepository(private val taskDao: TaskDao) {
     fun searchDatabase(searchQuery: String): LiveData<List<Task>> {
         return taskDao.searchDatabase(searchQuery)
     }
+
+    fun readParticularData(name: String): LiveData<List<Task>> {
+        return taskDao.readParticularData(name)
+    }
 }

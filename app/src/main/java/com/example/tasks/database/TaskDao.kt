@@ -18,6 +18,9 @@ interface TaskDao {
     @Query("SELECT * FROM task_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Task>>
 
+    @Query("SELECT * FROM task_table WHERE staffName LIKE :name")
+    fun readParticularData(name: String): LiveData<List<Task>>
+
     //@Query("SELECT taskDescription FROM task_table ORDER BY id ASC")
     //fun readTaskData(): LiveData<List<Task>>
 

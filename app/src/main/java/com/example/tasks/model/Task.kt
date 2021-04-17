@@ -12,5 +12,5 @@ data class Task(
     val id: Int,
     val taskDescription: String,
     val staffName: String,
-    val date: String
+    val event: String,
 ): Parcelable

@@ -1,5 +1,6 @@
 package com.example.tasks.fragments
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,8 +23,12 @@ class StaffListAdapter: RecyclerView.Adapter<StaffListAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = taskList[position]
-        holder.itemView.id_staff_txt.text = currentItem.id.toString()
+        //holder.itemView.id_staff_txt.text = currentItem.id.toString()
         holder.itemView.task_staff_txt.text = currentItem.taskDescription
+        holder.itemView.staff_event_txt.text = currentItem.event
+        if (holder.itemView.staff_event_txt.text != "-")
+            holder.itemView.setBackgroundColor(Color.rgb(137,207,240))
+            //holder.itemView.staff_event_txt.setTextColor(0x00000000)
     }
 
     override fun getItemCount(): Int {
