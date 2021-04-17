@@ -45,4 +45,8 @@ class TaskViewModel (application: Application): AndroidViewModel(application) {
         return repository.searchDatabase(searchQuery)
     }
 
+    fun readParticularData(name: String): LiveData<List<Task>> {
+        return repository.readParticularData(name)
+    }
+
 }

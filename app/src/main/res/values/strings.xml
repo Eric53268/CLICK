@@ -58,12 +58,14 @@
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
-    <string name="date_format">dd/mm/yyyy</string>
+    <string name="event_or_not">- / Event Name</string>
     <string name="search_task">Search task</string>
     <string name="update_task">Update</string>
     <string name="search">Search</string>
     <string name="staff">Staff</string>
     <string name="assigned_date">Date</string>
+    <string name="anniversary">Anniversary</string>
+    <string name="complete">Complete</string>
 
     //Buttons
     <string name="deleteReservation">Delete reservation</string>
@@ -85,6 +87,11 @@
         <item>Manager</item>
         <item>Front desk clerk</item>
         <item>Janitor</item>
+    </string-array>
+
+    <string-array name="complete">
+        <item>Not completed</item>
+        <item>Completed</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

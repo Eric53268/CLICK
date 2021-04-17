@@ -1,17 +1,17 @@
 package com.example.tasks.fragments
 
 import android.os.Bundle
-import android.view.*
-import android.widget.SearchView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clickhotelmanagementsystem.R
 import com.example.tasks.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.fragment_staff_task_list.view.*
 
-class StaffTaskListFragment : Fragment(), SearchView.OnQueryTextListener {
+class StaffTaskListFragment : Fragment() {
 
     private lateinit var mTaskViewModel: TaskViewModel
     val adapter = StaffListAdapter()
@@ -30,18 +30,22 @@ class StaffTaskListFragment : Fragment(), SearchView.OnQueryTextListener {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        val name = "Alvin"
+
         //TaskViewModel
         mTaskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
-        mTaskViewModel.readAllData.observe(viewLifecycleOwner, Observer { task ->
-            adapter.setData(task)
+        mTaskViewModel.readParticularData(name).observe(viewLifecycleOwner, { list ->
+            list.let {
+                adapter.setData(it)
+            }
         })
 
-        setHasOptionsMenu(true)
+        //setHasOptionsMenu(true)
 
         return view
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu, menu)
 
         val search = menu.findItem(R.id.menu_search)
@@ -72,5 +76,5 @@ class StaffTaskListFragment : Fragment(), SearchView.OnQueryTextListener {
                 adapter.setData(it)
             }
         })
-    }
+    }*/
 }

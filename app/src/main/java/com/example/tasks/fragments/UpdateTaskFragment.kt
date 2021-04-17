@@ -30,7 +30,7 @@ class UpdateTaskFragment : Fragment() {
 
         view.updateAddTask.setText(args.currentTask.taskDescription)
         view.updateAddName.setText(args.currentTask.staffName)
-        view.updateAddDate.setText(args.currentTask.date)
+        view.updateAddEvent.setText(args.currentTask.event)
 
         view.confirm_update.setOnClickListener {
             updateItem()
@@ -50,14 +50,14 @@ class UpdateTaskFragment : Fragment() {
         findNavController().navigate(R.id.action_updateTaskFragment_to_taskListFragment)
     }
 
-    private fun updateItem() {
+    fun updateItem() {
         val taskDescription = updateAddTask.text.toString()
         val name = updateAddName.text.toString()
-        val assignedDate = updateAddDate.text.toString()
+        val event = updateAddEvent.text.toString()
 
-        if (inputCheck(taskDescription, name, assignedDate)) {
+        if (inputCheck(taskDescription, name, event)) {
             //Create Task Object
-            val updatedTask = Task(args.currentTask.id, taskDescription, name, assignedDate)
+            val updatedTask = Task(args.currentTask.id, taskDescription, name, event)
             //Update Current Task
             mTaskViewModel.updateTask(updatedTask)
             Toast.makeText(requireContext(), "Updated successfully.", Toast.LENGTH_LONG).show()
@@ -68,8 +68,8 @@ class UpdateTaskFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(taskDescription: String, name: String, assignedDate: String): Boolean {
-        return !(TextUtils.isEmpty(taskDescription) || TextUtils.isEmpty(name) || TextUtils.isEmpty(assignedDate))
+    private fun inputCheck(taskDescription: String, name: String, event: String): Boolean {
+        return !(TextUtils.isEmpty(taskDescription) || TextUtils.isEmpty(name) || TextUtils.isEmpty(event))
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
