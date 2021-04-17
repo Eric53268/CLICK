@@ -94,6 +94,13 @@
         <item>Completed</item>
     </string-array>
 
+    <string-array name="roomType">
+        <item>Standard Room</item>
+        <item>Deluxe Room</item>
+        <item>Premium Room</item>
+        <item>Lexis Suite</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
