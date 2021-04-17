@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clickhotelmanagementsystem.DashboardActivity
 import com.example.clickhotelmanagementsystem.R
+import com.example.tasks.MainActivity
 
 class MainPageManager : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,11 @@ class MainPageManager : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val task: Button = findViewById(R.id.tasks)
+        task.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
