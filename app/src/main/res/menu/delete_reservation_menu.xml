@@ -2,9 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/delete_reservation"
-        android:title = "Delete reservation"
+    <item android:id="@+id/delete_user"
+        android:title = "Delete user"
         android:icon="@drawable/ic_delete"
+        android:iconTint="@color/white"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/home_icon"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
         android:iconTint="@color/white"
         app:showAsAction="ifRoom"/>
 

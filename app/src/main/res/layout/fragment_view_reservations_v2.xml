@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ReservationsModuleV2.ViewReservationsV2">
+    tools:context=".ReservationsModuleV2.ViewReservationV2">
 
     <TextView
         android:id="@+id/viewRoomType2View"

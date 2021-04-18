@@ -1,12 +1,12 @@
 package com.example.clickhotelmanagementsystem.ReservationsModuleV2
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.DatePicker
 import android.widget.Spinner
@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clickhotelmanagementsystem.Database.Reservations.CustomerDetails
 import com.example.clickhotelmanagementsystem.Database.Reservations.ReservationsViewModel
+import com.example.clickhotelmanagementsystem.Manager.MainPageManager
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentAddReservationV2Binding
 import kotlinx.android.synthetic.main.fragment_add_reservation_v2.*
@@ -78,6 +79,7 @@ class AddReservationV2 : Fragment() {
         binding.saveButton.setOnClickListener {
             insertDataToDatabase()
         }
+        setHasOptionsMenu(true)
 
         return view
     }
@@ -112,6 +114,28 @@ class AddReservationV2 : Fragment() {
             Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.back_home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.home_icon){
+            backHome()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun backHome(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_, _->
+            val intent = Intent(requireContext(), MainPageManager::class.java)
+            startActivity(intent)
+        }
+        builder.setNegativeButton("No"){_, _ ->}
+        builder.setMessage("Are you sure you want to go back to the main page?")
+        builder.create().show()
     }
 
     private fun inputCheck(

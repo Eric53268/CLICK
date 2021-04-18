@@ -15,7 +15,7 @@ data class CustomerDetails(
     @NonNull
     @PrimaryKey(autoGenerate = true) var roomID: Int,
     val reservationName: String?,
-    val pax: Int?,
+    val pax: Int,
     val breakfast: Boolean,
     val checkInDate: String?,
     val checkOutDate: String?,

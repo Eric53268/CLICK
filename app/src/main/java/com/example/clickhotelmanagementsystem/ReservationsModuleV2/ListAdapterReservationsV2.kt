@@ -25,9 +25,9 @@ class ListAdapterReservationsV2: RecyclerView.Adapter<ListAdapterReservationsV2.
 
     override fun onBindViewHolder(holder: MyReservationsViewHolder, position: Int) {
         val currentReservation = reservationList[position]
-        holder.itemView.displayReservationNameV2.text = currentReservation.reservationName.toString()
+        holder.itemView.displayReservationNameV2.text = currentReservation.reservationName
         holder.itemView.displayPaxV2.text = currentReservation.pax.toString()
-        holder.itemView.displayCheckInDateV2.text = currentReservation.checkInDate.toString()
+        holder.itemView.displayCheckInDateV2.text = currentReservation.checkInDate
 
         holder.itemView.rowLayoutReservationsV2.setOnClickListener {
             val action = ViewAllReservationsV2Directions.actionViewAllReservationsV2ToViewReservationsV2(currentReservation)

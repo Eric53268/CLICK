@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/viewAllReservationsV2"
         android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.ViewAllReservationsV2"
-        android:label="fragment_view_all_reservations_v2"
+        android:label="Reservations"
         tools:layout="@layout/fragment_view_all_reservations_v2" >
         <action
             android:id="@+id/action_viewAllReservationsV2_to_addReservationV2"
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewReservationsV2"
-        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.ViewReservationsV2"
+        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.ViewReservationV2"
         android:label="fragment_view_reservations_v2"
         tools:layout="@layout/fragment_view_reservations_v2" >
         <action
@@ -52,5 +52,8 @@
         <argument
             android:name="editReservation"
             app:argType="com.example.clickhotelmanagementsystem.Database.Reservations.CustomerDetails" />
+        <action
+            android:id="@+id/action_editReservationV2_to_viewAllReservationsV2"
+            app:destination="@id/viewAllReservationsV2" />
     </fragment>
 </navigation>

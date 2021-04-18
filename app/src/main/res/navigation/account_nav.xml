@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/list_users_manager"
         android:name="com.example.clickhotelmanagementsystem.AccountsModule.ListUsersManagerFragment"
-        android:label="Users"
+        android:label="Staff details"
         tools:layout="@layout/fragment_list_users_manager" >
         <action
             android:id="@+id/action_list_users_manager_to_add_user_account_manager"

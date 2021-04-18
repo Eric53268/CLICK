@@ -27,11 +27,11 @@ class Reservations : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
         binding = ActivityReservationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        navController = findNavController(R.id.view_all_reservations)
+        /*navController = findNavController(R.id.view_all_reservations)
         drawerLayout = findViewById(R.id.drawerLayout)
         nav_menu.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)*/
 
         /*        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(
@@ -77,10 +77,10 @@ class Reservations : AppCompatActivity()/*, NavigationView.OnNavigationItemSelec
         return true
     }*/
 
-    override fun onSupportNavigateUp(): Boolean {
+    /*override fun onSupportNavigateUp(): Boolean {
         navController = findNavController(R.id.view_all_reservations)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
+    }*/
 
 }
