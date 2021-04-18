@@ -18,6 +18,7 @@ import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentEditReservationV2Binding
 import kotlinx.android.synthetic.main.fragment_edit_reservation_v2.*
 import kotlinx.android.synthetic.main.fragment_edit_reservation_v2.view.*
+import kotlinx.android.synthetic.main.fragment_view_reservations_v2.view.*
 import java.util.*
 
 class EditReservationV2 : Fragment() {
@@ -58,11 +59,13 @@ class EditReservationV2 : Fragment() {
 
         view.inputReservationNameField2Edit.setText(argsReservationEdit.editReservation.reservationName)
         view.inputPax2Edit.placeholderText = argsReservationEdit.editReservation.pax.toString()
+        view.inputCheckInDate2Edit.text = argsReservationEdit.editReservation.checkInDate.toString()
+        view.inputCheckOutDate2Edit.text = argsReservationEdit.editReservation.checkOutDate.toString()
 
         view.checkInDateButtonEdit.setOnClickListener{
             val dpdInEdit = DatePickerDialog(
                 requireContext(),
-                DatePickerDialog.OnDateSetListener { view: DatePicker?, inYear, inMonth, inDay ->
+                { view: DatePicker?, inYear, inMonth, inDay ->
                     inputCheckInDate2Edit.text =
                         inDay.toString() + "/" + inMonth.toString() + "/" + inYear.toString()
                 },
@@ -75,7 +78,7 @@ class EditReservationV2 : Fragment() {
         view.checkOutDateButtonEdit.setOnClickListener{
             val dpdOutEdit = DatePickerDialog(
                 requireContext(),
-                DatePickerDialog.OnDateSetListener { view: DatePicker?, outYear, outMonth, outDay ->
+                { view: DatePicker?, outYear, outMonth, outDay ->
                     inputCheckOutDate2Edit.text =
                         outDay.toString() + "/" + outMonth.toString() + "/" + outYear.toString()
                 },

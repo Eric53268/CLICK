@@ -96,7 +96,6 @@ class AddUserAccountManagerFragment : Fragment(R.layout.fragment_add_user_accoun
 
     private fun insertDataToDatabase(){
 
-        val uID = addID.text.toString()
         val firstName = addFirstName.text.toString()
         val lastName = addLastName.text.toString()
         val DOB = addDOB.text.toString()
@@ -136,7 +135,7 @@ class AddUserAccountManagerFragment : Fragment(R.layout.fragment_add_user_accoun
         val phoneNumber = addPhoneNumber.text.toString()
         val password = "abc"
 
-        if(inputCheck(uID, firstName,lastName,DOB,address,IC,email,departmentValue,positionValue,phoneNumber)){
+        if(inputCheck(firstName,lastName,DOB,address,IC,email,departmentValue,positionValue,phoneNumber)){
 
             //Create user object
             val user = EditOwnProfile(0,firstName,lastName,DOB,address,Integer.parseInt(IC),email,departmentValue,positionValue,phoneNumber,password)
@@ -156,10 +155,9 @@ class AddUserAccountManagerFragment : Fragment(R.layout.fragment_add_user_accoun
     }
 
     //To check if input fields are filled
-    private fun inputCheck(uID: String,firstName: String,lastName: String,DOB: String,IC: String,address: String,
+    private fun inputCheck(firstName: String,lastName: String,DOB: String,IC: String,address: String,
                            email: String,departmentValue: String,positionValue: String,phoneNumber: String): Boolean{
-        return !(TextUtils.isEmpty(uID) &&
-                TextUtils.isEmpty(firstName) &&
+        return !(TextUtils.isEmpty(firstName) &&
                 TextUtils.isEmpty(lastName) &&
                 TextUtils.isEmpty(DOB) &&
                 TextUtils.isEmpty(IC) &&

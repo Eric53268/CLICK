@@ -48,27 +48,11 @@
         android:hint="Eg: 11/11/2011"
         android:inputType="textPersonName"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/addID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addLastName"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/addID"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="12345678"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/addIC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addDOB"
+        app:layout_constraintTop_toBottomOf="@+id/addLastName"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
@@ -85,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addID"
+        app:layout_constraintTop_toBottomOf="@+id/addDOB"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
@@ -183,28 +167,11 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/IDField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastNameField"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/IDField"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="start|center"
-        android:text="@string/fieldID"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/ICField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/DOBField"
+        app:layout_constraintTop_toBottomOf="@id/lastNameField"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -221,7 +188,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/IDField"
+        app:layout_constraintTop_toBottomOf="@id/DOBField"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
