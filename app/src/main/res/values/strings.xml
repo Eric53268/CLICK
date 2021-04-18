@@ -66,8 +66,6 @@
     <string name="assigned_date">Date</string>
     <string name="anniversary">Anniversary</string>
     <string name="complete">Complete</string>
-    <string name="home">Home</string>
-    <string name="label_tasks">Tasks</string>
 
     //Buttons
     <string name="deleteReservation">Delete reservation</string>
@@ -89,6 +87,11 @@
         <item>Manager</item>
         <item>Front desk clerk</item>
         <item>Janitor</item>
+    </string-array>
+
+    <string-array name="complete">
+        <item>Not completed</item>
+        <item>Completed</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -1,12 +1,13 @@
 package com.example.clickhotelmanagementsystem.AccountsModule
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.clickhotelmanagementsystem.Manager.MainPageManager
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentViewUserAccountManagerBinding
 import kotlinx.android.synthetic.main.fragment_view_user_account_manager.view.*
@@ -39,9 +40,32 @@ class ViewUserAccountManager : Fragment() {
             findNavController().navigate(action)
             //findNavController().navigate(R.id.action_viewUserAccountManager_to_updateUserAccountManager)
         }
+        setHasOptionsMenu(true)
 
         return view
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.back_home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.home_icon){
+            backHome()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun backHome(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_, _->
+            val intent = Intent(requireContext(), MainPageManager::class.java)
+            startActivity(intent)
+        }
+        builder.setNegativeButton("No"){_, _ ->}
+        builder.setMessage("Are you sure you want to go back to the main page?")
+        builder.create().show()
     }
 
 }

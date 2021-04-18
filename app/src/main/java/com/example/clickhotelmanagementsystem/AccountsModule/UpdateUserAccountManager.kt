@@ -1,6 +1,7 @@
 package com.example.clickhotelmanagementsystem.AccountsModule
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.clickhotelmanagementsystem.Database.Accounts.EditOwnProfile
 import com.example.clickhotelmanagementsystem.Database.Accounts.UserViewModel
+import com.example.clickhotelmanagementsystem.Manager.MainPageManager
 import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentUpdateUserAccountManagerBinding
 import kotlinx.android.synthetic.main.fragment_update_user_account_manager.*
@@ -122,14 +124,27 @@ class UpdateUserAccountManager : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.delete_user_menu, menu)
+        inflater.inflate(R.menu.delete_reservation_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.delete_user){
             deleteUser()
+        }else if(item.itemId == R.id.home_icon){
+            backHome()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun backHome(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_, _->
+            val intent = Intent(requireContext(), MainPageManager::class.java)
+            startActivity(intent)
+        }
+        builder.setNegativeButton("No"){_, _ ->}
+        builder.setMessage("Are you sure you want to go back to the main page?")
+        builder.create().show()
     }
 
     private fun deleteUser(){

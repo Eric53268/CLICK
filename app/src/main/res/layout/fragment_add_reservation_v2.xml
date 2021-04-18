@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReservationsModuleV2.AddReservationV2">
+
+    <Spinner
+        android:id="@+id/inputRoomType2"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:entries="@array/roomType"
+        app:layout_constraintBottom_toTopOf="@id/inputReservationName2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputReservationName2"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/inputPax2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reservationNameField2"
+        app:layout_constraintTop_toBottomOf="@id/inputRoomType2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputReservationNameField2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPax2"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/inputCheckInDate2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/paxField2"
+        app:layout_constraintTop_toBottomOf="@id/inputReservationName2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPaxField2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CalendarView
+            android:id="@+id/calendarView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/inputCheckInDate2"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Eg: 11/11/2011"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputCheckOutDate2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/checkInDateField2"
+        app:layout_constraintTop_toBottomOf="@+id/inputPax2" />
+
+    <ImageButton
+        android:id="@+id/checkInDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:src="@drawable/date"
+        app:layout_constraintBottom_toTopOf="@id/checkOutDateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@id/inputCheckInDate2"
+        app:layout_constraintTop_toBottomOf="@id/inputPax2" />
+
+    <TextView
+        android:id="@+id/inputCheckOutDate2"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="80dp"
+        android:ems="10"
+        android:hint="12345678"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/checkOutDateField2"
+        app:layout_constraintTop_toBottomOf="@+id/inputCheckInDate2"
+        app:layout_constraintBottom_toTopOf="@id/checkBoxBreakfastAdd"/>
+
+    <ImageButton
+        android:id="@+id/checkOutDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:src="@drawable/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@id/inputCheckOutDate2"
+        app:layout_constraintBottom_toTopOf="@id/checkBoxBreakfastAdd"
+        app:layout_constraintTop_toBottomOf="@id/checkInDateButton" />
+
+    <TextView
+        android:id="@+id/reservationNameField2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="start|center"
+        android:text="@string/fieldReservationName"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/paxField2"
+        app:layout_constraintTop_toBottomOf="@id/inputRoomType2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/paxField2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="start|center"
+        android:text="@string/fieldPax"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/checkInDateField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservationNameField2" />
+
+    <TextView
+        android:id="@+id/checkInDateField2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="start|center"
+        android:text="@string/checkInDate"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/paxField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkOutDateField2" />
+
+    <TextView
+        android:id="@+id/checkOutDateField2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="start|center"
+        android:text="@string/checkOutDate"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/breakfastField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkInDateField2" />
+
+    <TextView
+        android:id="@+id/breakfastField"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="start|center"
+        android:text="@string/breakfast"
+        android:layout_marginBottom="100dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkOutDateField2" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/saveUserButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/cancelButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.735"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBreakfastAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintTop_toBottomOf="@id/inputCheckOutDate2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/breakfastField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="581dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

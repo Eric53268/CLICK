@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reservation_nav_v2"
+    app:startDestination="@id/viewAllReservationsV2">
+
+    <fragment
+        android:id="@+id/viewAllReservationsV2"
+        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.ViewAllReservationsV2"
+        android:label="Reservations"
+        tools:layout="@layout/fragment_view_all_reservations_v2" >
+        <action
+            android:id="@+id/action_viewAllReservationsV2_to_addReservationV2"
+            app:destination="@id/addReservationV2" />
+        <action
+            android:id="@+id/action_viewAllReservationsV2_to_viewReservationsV2"
+            app:destination="@id/viewReservationsV2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addReservationV2"
+        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.AddReservationV2"
+        android:label="fragment_add_reservation_v2"
+        tools:layout="@layout/fragment_add_reservation_v2" >
+        <action
+            android:id="@+id/action_addReservationV2_to_viewAllReservationsV2"
+            app:destination="@id/viewAllReservationsV2" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewReservationsV2"
+        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.ViewReservationV2"
+        android:label="fragment_view_reservations_v2"
+        tools:layout="@layout/fragment_view_reservations_v2" >
+        <action
+            android:id="@+id/action_viewReservationsV2_to_editReservationV22"
+            app:destination="@id/editReservationV2" />
+        <action
+            android:id="@+id/action_viewReservationsV2_to_viewAllReservationsV2"
+            app:destination="@id/viewAllReservationsV2" />
+        <argument
+            android:name="currentReservation"
+            app:argType="com.example.clickhotelmanagementsystem.Database.Reservations.CustomerDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/editReservationV2"
+        android:name="com.example.clickhotelmanagementsystem.ReservationsModuleV2.EditReservationV2"
+        android:label="fragment_edit_reservation_v2"
+        tools:layout="@layout/fragment_edit_reservation_v2" >
+        <action
+            android:id="@+id/action_editReservationV2_to_viewReservationsV2"
+            app:destination="@id/viewReservationsV2" />
+        <argument
+            android:name="editReservation"
+            app:argType="com.example.clickhotelmanagementsystem.Database.Reservations.CustomerDetails" />
+        <action
+            android:id="@+id/action_editReservationV2_to_viewAllReservationsV2"
+            app:destination="@id/viewAllReservationsV2" />
+    </fragment>
+</navigation>
