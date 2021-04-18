@@ -9,5 +9,14 @@
         android:id="@+id/staffTaskListFragment"
         android:name="com.example.tasks.fragments.StaffTaskListFragment"
         android:label="Tasks"
-        tools:layout="@layout/fragment_staff_task_list"/>
+        tools:layout="@layout/fragment_staff_task_list">
+        <action
+            android:id="@+id/action_staffTaskListFragment_to_mainPageStaff"
+            app:destination="@id/mainPageStaff" />
+    </fragment>
+    <activity
+        android:id="@+id/mainPageStaff"
+        android:name="com.example.clickhotelmanagementsystem.Staff.MainPageStaff"
+        android:label="activity_main_page_staff"
+        tools:layout="@layout/activity_main_page_staff" />
 </navigation>

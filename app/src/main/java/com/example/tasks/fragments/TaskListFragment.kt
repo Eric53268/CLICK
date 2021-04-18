@@ -55,6 +55,17 @@ class TaskListFragment : Fragment(), SearchView.OnQueryTextListener {
         searchView?.setOnQueryTextListener(this)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_home -> goToHome()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun goToHome() {
+        findNavController().navigate(R.id.action_taskListFragment_to_mainPageManager)
+    }
+
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (query != null) {
             searchDatabase(query)

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_taskListFragment_to_updateTaskFragment"
             app:destination="@id/updateTaskFragment" />
+        <action
+            android:id="@+id/action_taskListFragment_to_mainPageManager"
+            app:destination="@id/mainPageManager" />
     </fragment>
     <fragment
         android:id="@+id/addTaskFragment"
@@ -38,4 +41,9 @@
             android:name="currentTask"
             app:argType="com.example.tasks.model.Task" />
     </fragment>
+    <activity
+        android:id="@+id/mainPageManager"
+        android:name="com.example.clickhotelmanagementsystem.Manager.MainPageManager"
+        android:label="activity_main_page_manager"
+        tools:layout="@layout/activity_main_page_manager" />
 </navigation>

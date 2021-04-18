@@ -19,7 +19,10 @@
         </activity>
 
         <activity android:name="com.example.tasks.MainActivity" />
-        <activity android:name="com.example.tasks.StaffActivity" />
+        <activity
+            android:name="com.example.tasks.StaffActivity"
+            android:label="@string/label_tasks">
+        </activity>
         <activity android:name=".Manager.MainPageManager" />
         <activity android:name=".Manager.Reservations" />
         <activity android:name=".Manager.AccountManager" />

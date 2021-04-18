@@ -1,11 +1,10 @@
 package com.example.tasks.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clickhotelmanagementsystem.R
 import com.example.tasks.viewmodel.TaskViewModel
@@ -40,9 +39,24 @@ class StaffTaskListFragment : Fragment() {
             }
         })
 
-        //setHasOptionsMenu(true)
+        setHasOptionsMenu(true)
 
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_home -> goToHome()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun goToHome() {
+        findNavController().navigate(R.id.action_staffTaskListFragment_to_mainPageStaff)
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
