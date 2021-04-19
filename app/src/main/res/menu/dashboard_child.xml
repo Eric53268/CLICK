@@ -6,7 +6,7 @@
     <item   android:id="@+id/menu_delete"
         android:title="delete"/>
     <item   android:id="@+id/menu_mark_as_completed"
-        android:title="mark_as_completed"/>
+        android:title="mark as completed"/>
     <item   android:id="@+id/menu_reset"
         android:title="reset"/>
 </menu>
