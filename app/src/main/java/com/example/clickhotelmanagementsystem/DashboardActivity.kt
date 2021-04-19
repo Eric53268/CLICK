@@ -49,7 +49,6 @@ class DashboardActivity : AppCompatActivity() {
             val monthOut = cOut.get(Calendar.MONTH)
             val dateOut = cOut.get(Calendar.DAY_OF_MONTH)
 
-            val hm :ImageView = findViewById(R.id.home)
 
 
             dialog.setView(view)
