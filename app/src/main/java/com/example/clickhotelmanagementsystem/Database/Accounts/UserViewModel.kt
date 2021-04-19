@@ -43,4 +43,28 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    /*fun getUserPosition(id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.getUserPosition(id)
+        }
+    }
+
+    fun loadPSW(id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.loadPSW(id)
+        }
+    }
+
+    fun getPosition(user: EditOwnProfile){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.getPosition(user)
+        }
+    }
+
+    fun isExist(id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.isExist(id)
+        }
+    }*/
+
 }

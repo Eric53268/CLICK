@@ -12,7 +12,7 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "Accounts")
 data class EditOwnProfile(
     @NonNull
-    @PrimaryKey (autoGenerate = true) val uID: Int,
+    @PrimaryKey (autoGenerate = true) var uID: Int,
     @ColumnInfo(name = "first_name") var firstName: String?,
     @ColumnInfo(name = "last_name") var lastName: String?,
     val DOB: String?,
@@ -20,7 +20,7 @@ data class EditOwnProfile(
     var IC: Int,
     var email: String?,
     var department: String?,
-    var position: String?,
+    @ColumnInfo(name = "position") var position: String?,
     var phoneNumber: String?,
-    var password: String?
+    @ColumnInfo(name = "password") var password: String?
 ): Parcelable

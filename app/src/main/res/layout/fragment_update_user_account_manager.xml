@@ -362,17 +362,4 @@
         app:layout_constraintTop_toBottomOf="@id/departmentSpinnerUpdate"
         app:layout_constraintVertical_bias="0.859" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:text="@string/resetPassword"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

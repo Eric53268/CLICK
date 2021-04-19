@@ -23,4 +23,20 @@ class UserRepository(private val userDAO: UserDAO) {
         userDAO.deleteAllUsers()
     }
 
+    /*suspend fun getUserPosition(id: Int){
+        userDAO.getUserPosition(id)
+    }
+
+    suspend fun loadPSW(id: Int){
+        userDAO.loadPSW(id)
+    }
+
+    suspend fun getPosition(user: EditOwnProfile){
+        userDAO.getPosition(user.uID)
+    }
+
+    suspend fun isExist(id: Int){
+        userDAO.isExist(id)
+    }*/
+
 }
