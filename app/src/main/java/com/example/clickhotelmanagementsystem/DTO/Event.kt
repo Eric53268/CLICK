@@ -6,5 +6,7 @@ class Event {
     var name = ""
     var createdAt = ""
     var items: MutableList<EventItem> = ArrayList()
+    var start  = " "
+    var end  = " "
 
 }

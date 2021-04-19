@@ -4,8 +4,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.clickhotelmanagementsystem.DTO.EventItem
 import com.example.clickhotelmanagementsystem.DTO.Event
+import com.example.clickhotelmanagementsystem.DTO.EventItem
 
 
 class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_version) {
@@ -13,6 +13,8 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
         val createEventTable = "  CREATE TABLE $TABLE_EVENT (" +
                 "$COL_ID integer PRIMARY KEY AUTOINCREMENT," +
                 "$COL_CREATED_AT datetime DEFAULT CURRENT_TIMESTAMP," +
+                "$COL_START varchar,"+
+                "$COL_END varchar,"+
                 "$COL_NAME varchar);"
 
         val createEventItemTable =
@@ -37,6 +39,8 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
         val db = writableDatabase
         val cv = ContentValues()
         cv.put(COL_NAME, event.name)
+        cv.put(COL_START, event.start)
+        cv.put(COL_END, event.end)
         val result = db.insert(TABLE_EVENT, null, cv)
         return result != (-1).toLong()
     }
@@ -44,6 +48,8 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
         val db = writableDatabase
         val cv = ContentValues()
         cv.put(COL_NAME, event.name)
+        cv.put(COL_START, event.start)
+        cv.put(COL_END, event.end)
         db.update(TABLE_EVENT, cv, "$COL_ID=?" , arrayOf(event.id.toString()))
     }
 
@@ -56,6 +62,8 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
                 val todo = Event()
                 todo.id = queryResult.getLong(queryResult.getColumnIndex(COL_ID))
                 todo.name = queryResult.getString(queryResult.getColumnIndex(COL_NAME))
+                todo.start=queryResult.getString(queryResult.getColumnIndex(COL_START))
+                todo.end=queryResult.getString(queryResult.getColumnIndex(COL_END))
                 result.add(todo)
             } while (queryResult.moveToNext())
         }
@@ -71,8 +79,6 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
         cv.put(COL_EVENT_NAME, item.eventName)
         cv.put(COL_EVENT_ID, item.eventId)
         cv.put(COL_IS_COMPLETED, item.isCompleted)
-
-
         val result = db.insert(TABLE_EVENT_ITEM, null, cv)
         return result != (-1).toLong()
     }
@@ -110,7 +116,6 @@ class DBHandler(private val context: Context) : SQLiteOpenHelper(context, DB_NAM
         cv.put(COL_EVENT_NAME, item.eventName)
         cv.put(COL_EVENT_ID, item.eventId)
         cv.put(COL_IS_COMPLETED, item.isCompleted)
-
 
         db.update(TABLE_EVENT_ITEM, cv, "$COL_ID=?", arrayOf(item.id.toString()))
     }
