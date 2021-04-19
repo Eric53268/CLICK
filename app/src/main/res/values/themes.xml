@@ -17,6 +17,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:colorPrimary">@color/design_default_color_primary</item>
+        <item name="android:colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="android:button">@color/lightGray</item>
+    </style>
+
     //Custom action bar with navigation tab (hamburger)
     <style name="Theme.CLiCKHotelManagementSystem.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->

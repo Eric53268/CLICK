@@ -3,14 +3,15 @@ package com.example.clickhotelmanagementsystem.ReservationsModuleV2
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.CheckBox
 import android.widget.DatePicker
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.clickhotelmanagementsystem.Database.Reservations.CustomerDetails
@@ -52,7 +53,7 @@ class AddReservationV2 : Fragment() {
 
         binding.checkInDateButton.setOnClickListener{
             val dpdIn = DatePickerDialog(
-                requireContext(),
+                requireContext(),R.style.DialogTheme,
                 DatePickerDialog.OnDateSetListener { view: DatePicker?, inYear, inMonth, inDay ->
                     inputCheckInDate2.text =
                         inDay.toString() + "/" + inMonth.toString() + "/" + inYear.toString()
@@ -61,11 +62,14 @@ class AddReservationV2 : Fragment() {
                 monthIn,
                 dateIn
             )
-            dpdIn.show()}
+            dpdIn.show()
+            dpdIn.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+            dpdIn.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
+        }
 
         binding.checkOutDateButton.setOnClickListener{
             val dpdOut = DatePickerDialog(
-                requireContext(),
+                requireContext(),R.style.DialogTheme,
                 DatePickerDialog.OnDateSetListener { view: DatePicker?, outYear, outMonth, outDay ->
                     inputCheckOutDate2.text =
                         outDay.toString() + "/" + outMonth.toString() + "/" + outYear.toString()
@@ -74,7 +78,10 @@ class AddReservationV2 : Fragment() {
                 monthOut,
                 dateOut
             )
-            dpdOut.show()}
+            dpdOut.show()
+            dpdOut.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+            dpdOut.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
+        }
 
         binding.saveButton.setOnClickListener {
             insertDataToDatabase()

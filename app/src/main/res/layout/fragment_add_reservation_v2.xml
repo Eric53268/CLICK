@@ -20,6 +20,7 @@
         android:id="@+id/inputReservationName2"
         android:layout_width="250dp"
         android:layout_height="60dp"
+
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBottom_toTopOf="@+id/inputPax2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +70,8 @@
         android:layout_height="60dp"
         android:ems="10"
         android:textColor="#000000"
+
+        android:gravity="start|center"
         android:layout_marginEnd="80dp"
         app:layout_constraintBottom_toTopOf="@+id/inputCheckOutDate2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +93,8 @@
     <TextView
         android:id="@+id/inputCheckOutDate2"
         android:layout_width="170dp"
+
+        android:gravity="start|center"
         android:layout_height="60dp"
         android:layout_marginEnd="80dp"
         android:ems="10"
@@ -196,23 +201,9 @@
         android:text="@string/saveUserButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/cancelButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.735"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
     <CheckBox
         android:id="@+id/checkBoxBreakfastAdd"
@@ -226,6 +217,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         tools:layout_editor_absoluteX="269dp"
+        android:buttonTint="@color/greyTransparent"
         tools:layout_editor_absoluteY="581dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,8 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="420dp"
         android:layout_height="60dp"
-        android:hint="Reservation Name"
+        android:hint="Reservation name"
+
         app:layout_constraintBottom_toTopOf="@+id/inputPax2Edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
         android:layout_width="420dp"
         android:layout_height="60dp"
         android:hint="Pax"
-        android:inputType="number"
+
         app:layout_constraintBottom_toTopOf="@+id/inputCheckInDate2Edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,12 +67,13 @@
             android:layout_weight="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
+    <EditText
         android:id="@+id/inputCheckInDate2Edit"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:ems="10"
         android:textColor="#000000"
+        android:focusable="false"
         app:layout_constraintBottom_toTopOf="@+id/inputCheckOutDate2Edit"
         app:layout_constraintEnd_toStartOf="@id/checkInDateButtonEdit"
         app:layout_constraintHorizontal_bias="1.0"
@@ -89,12 +91,13 @@
         app:layout_constraintStart_toEndOf="@id/inputCheckInDate2Edit"
         app:layout_constraintTop_toBottomOf="@id/inputPax2Edit" />
 
-    <TextView
+    <EditText
         android:id="@+id/inputCheckOutDate2Edit"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:ems="10"
         android:textColor="#000000"
+        android:focusable="false"
         app:layout_constraintEnd_toStartOf="@id/checkOutDateButtonEdit"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/checkOutDateField2Edit"
@@ -171,19 +174,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/cancel_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/cancelButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.735"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
     <CheckBox
         android:id="@+id/checkBoxBreakfastEdit"
         android:layout_width="wrap_content"
@@ -195,7 +185,9 @@
         app:layout_constraintStart_toEndOf="@id/breakfastFieldEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        android:buttonTint="@color/greyTransparent"
         tools:layout_editor_absoluteX="269dp"
         tools:layout_editor_absoluteY="581dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

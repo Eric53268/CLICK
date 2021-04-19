@@ -3,11 +3,15 @@ package com.example.clickhotelmanagementsystem.ReservationsModuleV2
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
+import android.widget.CheckBox
+import android.widget.DatePicker
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.widget.*
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -18,7 +22,6 @@ import com.example.clickhotelmanagementsystem.R
 import com.example.clickhotelmanagementsystem.databinding.FragmentEditReservationV2Binding
 import kotlinx.android.synthetic.main.fragment_edit_reservation_v2.*
 import kotlinx.android.synthetic.main.fragment_edit_reservation_v2.view.*
-import kotlinx.android.synthetic.main.fragment_view_reservations_v2.view.*
 import java.util.*
 
 class EditReservationV2 : Fragment() {
@@ -28,16 +31,17 @@ class EditReservationV2 : Fragment() {
     private val argsReservationEdit by navArgs<EditReservationV2Args>()
     private lateinit var inputRoomTypeSpinner2: Spinner
     private lateinit var inputRoomTypeSelected: String
-    lateinit var checkboxBreakfastEdit: CheckBox
+    private lateinit var checkboxBreakfastEdit: CheckBox
 
-    val cIn = Calendar.getInstance()
-    val cOut = Calendar.getInstance()
-    val yearIn = cIn.get(Calendar.YEAR)
-    val monthIn = cIn.get(Calendar.MONTH)
-    val dateIn = cOut.get(Calendar.DAY_OF_MONTH)
-    val yearOut = cOut.get(Calendar.YEAR)
-    val monthOut = cOut.get(Calendar.MONTH)
-    val dateOut = cOut.get(Calendar.DAY_OF_MONTH)
+
+    private val cIn: Calendar = Calendar.getInstance()
+    private val cOut = Calendar.getInstance()
+    private val yearIn = cIn.get(Calendar.YEAR)
+    private val monthIn = cIn.get(Calendar.MONTH)
+    private val dateIn = cOut.get(Calendar.DAY_OF_MONTH)
+    private val yearOut = cOut.get(Calendar.YEAR)
+    private val monthOut = cOut.get(Calendar.MONTH)
+    private val dateOut = cOut.get(Calendar.DAY_OF_MONTH)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,35 +62,43 @@ class EditReservationV2 : Fragment() {
         //Toast.makeText(requireContext(), inputRoomTypeSelected, Toast.LENGTH_LONG).show()
 
         view.inputReservationNameField2Edit.setText(argsReservationEdit.editReservation.reservationName)
+
         view.inputPax2Edit.placeholderText = argsReservationEdit.editReservation.pax.toString()
-        view.inputCheckInDate2Edit.text = argsReservationEdit.editReservation.checkInDate.toString()
-        view.inputCheckOutDate2Edit.text = argsReservationEdit.editReservation.checkOutDate.toString()
+
+        view.inputCheckInDate2Edit.setText(argsReservationEdit.editReservation.checkInDate)
+        view.inputCheckOutDate2Edit.setText(argsReservationEdit.editReservation.checkOutDate)
 
         view.checkInDateButtonEdit.setOnClickListener{
             val dpdInEdit = DatePickerDialog(
-                requireContext(),
+                requireContext(),R.style.DialogTheme,DatePickerDialog.OnDateSetListener
                 { view: DatePicker?, inYear, inMonth, inDay ->
-                    inputCheckInDate2Edit.text =
-                        inDay.toString() + "/" + inMonth.toString() + "/" + inYear.toString()
+                    inputCheckInDate2Edit.setText(inDay.toString() + "/" + inMonth.toString() + "/" + inYear.toString())
+
                 },
                 yearIn,
                 monthIn,
                 dateIn
             )
-            dpdInEdit.show()}
+            dpdInEdit.show()
+            dpdInEdit.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+            dpdInEdit.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
+        }
 
         view.checkOutDateButtonEdit.setOnClickListener{
             val dpdOutEdit = DatePickerDialog(
-                requireContext(),
+                requireContext(),R.style.DialogTheme, DatePickerDialog.OnDateSetListener
                 { view: DatePicker?, outYear, outMonth, outDay ->
-                    inputCheckOutDate2Edit.text =
-                        outDay.toString() + "/" + outMonth.toString() + "/" + outYear.toString()
+                    inputCheckOutDate2Edit.setText(outDay.toString() + "/" + outMonth.toString() + "/" + outYear.toString())
+
                 },
                 yearOut,
                 monthOut,
                 dateOut
             )
-            dpdOutEdit.show()}
+            dpdOutEdit.show()
+            dpdOutEdit.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK)
+            dpdOutEdit.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
+        }
 
         checkboxBreakfastEdit.isChecked = argsReservationEdit.editReservation.breakfast
 
@@ -98,16 +110,38 @@ class EditReservationV2 : Fragment() {
         return view
     }
 
+    /*fun wannacry(): Int {
+        if(){
+            return Integer.parseInt(inputPax2Edit.placeholderText.toString())
+        }
+
+
+
+    }*/
+
+
+
+
     private fun updateReservation(){
 
         inputRoomTypeSelected= inputRoomTypeSpinner2.selectedItem.toString()
         val reservationName2 = inputReservationName2Edit.editText?.text.toString()
-        val pax = Integer.parseInt(inputPax2Edit.editText.toString())
         val breakfast = checkboxBreakfastEdit.isChecked
         val checkInDate2 = inputCheckInDate2Edit.text.toString()
         val checkOutDate2 = inputCheckOutDate2Edit.text.toString()
+        var pax = 0
 
-        if(inputCheck(inputRoomTypeSelected, reservationName2, pax, checkInDate2, checkOutDate2)){
+        if(inputPax2Edit.editText?.text.toString().isEmpty()){
+            pax = Integer.parseInt(inputPax2Edit.placeholderText.toString())
+        }
+        else{
+            pax = Integer.parseInt(inputPax2Edit.editText!!.text.toString())
+        }
+
+
+
+        if(inputCheck(inputRoomTypeSelected, reservationName2, checkInDate2, checkOutDate2)){
+
 
             //Create new user
             val updateReservation = CustomerDetails(argsReservationEdit.editReservation.roomID,
@@ -127,14 +161,14 @@ class EditReservationV2 : Fragment() {
     private fun inputCheck(
         roomType: String,
         reservationName: String,
-        pax: Int,
+        //pax: Int,
         checkInDate: String,
         checkOutDate: String
     ): Boolean{
 
         return !(TextUtils.isEmpty(roomType) &&
                 TextUtils.isEmpty(reservationName) &&
-                TextUtils.isEmpty(pax.toString()) &&
+                //TextUtils.isEmpty(pax.toString()) &&
                 TextUtils.isEmpty(checkInDate) &&
                 TextUtils.isEmpty(checkOutDate))
     }
